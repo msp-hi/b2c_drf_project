@@ -128,3 +128,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static').replace('\\', '/'),
 
 ]
+
+
+AUTH_USER_MODEL = 'user.User'
