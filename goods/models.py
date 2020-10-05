@@ -25,9 +25,9 @@ class GoodsType (BaseModel):
         return self.name
 
 
-class GoodsTypeMenu (BaseModel):
+class GoodsTypeMenu(BaseModel):
     '''商品种类模型类'''
-    type = models.ForeignKey('GoodsType', on_delete=models.CASCADE, verbose_name='所属商品类型')
+    types = models.ForeignKey('GoodsType', on_delete=models.CASCADE, verbose_name='所属商品类型')
     name = models.CharField(max_length=20, verbose_name='种类名称')
     url = models.CharField(verbose_name='URL', max_length=128)
     image = models.ImageField(upload_to='type', verbose_name='商品种类图')
@@ -40,4 +40,11 @@ class GoodsTypeMenu (BaseModel):
     def __str__(self):
         return self.name
 
+
+class Goods(BaseModel):
+    name = models.CharField(verbose_name='商品名称', max_length=20)
+    menu = models.ManyToManyField(verbose_name="拥有的所有种类", to='GoodsTypeMenu', blank=True)
+    desc = models.CharField(max_length=256,verbose_name='商品简介')
+    price = models.DecimalField(max_digits=20, decimal_places=2, verbose_name='商品价格')
+    image = models.ImageField(upload_to='goods', verbose_name='商品图片')
 
