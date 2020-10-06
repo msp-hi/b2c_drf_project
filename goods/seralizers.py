@@ -6,10 +6,10 @@ from goods import models
 class GoodsTypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = models.GoodsType
-        fields = ('id', 'name')
+        fields = ('name', 'url', 'component')
 
 class GoodsTypeMenuSerializer(serializers.HyperlinkedModelSerializer):
     types = serializers.ReadOnlyField(source='types.id')
     class Meta:
         model = models.GoodsTypeMenu
-        fields = ('id', 'name','types', 'url', 'image')
+        fields = ('name','types', 'url', 'image', 'component')

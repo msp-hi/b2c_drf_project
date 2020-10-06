@@ -12,9 +12,13 @@ from django.db import models
 # Create your models here.
 
 
+
 class GoodsType (BaseModel):
     '''商品类型模型类'''
     name = models.CharField(max_length=20, verbose_name='类型名称')
+    url = models.CharField(max_length=128, verbose_name='URL')
+    component = models.CharField(max_length=20, verbose_name='组件名称', blank=True,null=True)
+    
 
     class Meta:
         db_table = 'df_goods_type'
@@ -30,6 +34,7 @@ class GoodsTypeMenu(BaseModel):
     types = models.ForeignKey('GoodsType', on_delete=models.CASCADE, verbose_name='所属商品类型')
     name = models.CharField(max_length=20, verbose_name='种类名称')
     url = models.CharField(verbose_name='URL', max_length=128)
+    component = models.CharField(max_length=20, verbose_name='组件名称', blank=True,null=True)
     image = models.ImageField(upload_to='type', verbose_name='商品种类图')
 
     class Meta:
