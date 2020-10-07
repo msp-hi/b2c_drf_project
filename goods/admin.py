@@ -9,8 +9,3 @@ FilePath: \b2c_drf_project\goods\admin.py
 from django.contrib import admin
 
 # Register your models here.
-from goods.models import GoodsType, GoodsTypeMenu
-
-
-admin.site.register(GoodsType)
-admin.site.register(GoodsTypeMenu)
