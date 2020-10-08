@@ -30,9 +30,10 @@ http://127.0.0.1:8000/menus/menutype/list/1
 
 ### 首页三级菜单api
 http://127.0.0.1:8000/menus/menuitem/list/1
-http://127.0.0.1:8000/menus/menuitem/list/2
+http://127.0.0.1:8000/menus/menuitem/list/3
 
 ### 社区的二级菜单api
-http://127.0.0.1:8000/menus/menutype/list/1
+http://127.0.0.1:8000/menus/menutype/list/3
 
 ### 社区的三级菜单api
+http://127.0.0.1:8000/menus/menuitem/list/7
